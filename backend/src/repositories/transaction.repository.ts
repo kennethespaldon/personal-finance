@@ -1,5 +1,5 @@
 import supabase from "../config/supabase.ts";
-import { TransactionParams } from "../types/transaction.types.ts";
+import { type TransactionParams } from "../types/transaction.types.ts";
 
 const getTransactions = async ({
   minAmount,

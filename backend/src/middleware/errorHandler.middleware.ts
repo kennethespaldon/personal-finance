@@ -1,6 +1,6 @@
 import type { Request, Response, NextFunction } from "express"; 
 
-const errorHandler = (error: Error, req: Request, res: Response<Error>, next: NextFunction) => {
+const errorHandler = (error: Error, _req: Request, res: Response<Error>, _next: NextFunction) => {
   res.json(error);
 };
 
