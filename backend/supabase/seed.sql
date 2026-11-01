@@ -1,0 +1,22 @@
+insert into transactions (amount_in_cents, description, transaction_date)
+values
+  (1299, 'Lunch at Chipotle', '2026-10-01'),
+  (4599, 'Groceries at Trader Joes', '2026-10-02'),
+  (899, 'Coffee and pastry', '2026-10-03'),
+  (5999, 'Monthly internet bill', '2026-10-03'),
+  (2499, 'Gas station', '2026-10-04'),
+  (1599, 'Movie tickets', '2026-10-05'),
+  (3499, 'Dinner at restaurant', '2026-10-06'),
+  (12999, 'Electricity bill', '2026-10-07'),
+  (799, 'Spotify subscription', '2026-10-08'),
+  (2999, 'New running shoes', '2026-10-09'),
+  (1899, 'Lunch with friends', '2026-10-10'),
+  (6499, 'Weekly groceries', '2026-10-11'),
+  (499, 'Parking fee', '2026-10-12'),
+  (8999, 'Textbooks', '2026-10-13'),
+  (1599, 'Uber ride', '2026-10-14'),
+  (2199, 'Dinner takeout', '2026-10-15'),
+  (1099, 'Phone bill', '2026-10-16'),
+  (3999, 'Clothing purchase', '2026-10-18'),
+  (599, 'Coffee shop', '2026-10-20'),
+  (7499, 'Monthly gym membership', '2026-10-25');
