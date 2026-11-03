@@ -27,7 +27,11 @@ const getTransactions = async ({
     query = query.lte("transaction_date", endDate);
   }
 
-  return query;
+  const { data, error } = await query;
+
+  if (error) throw error;
+
+  return data;
 };
 
 export default { getTransactions };
