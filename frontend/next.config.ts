@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { API_URL } from "@/src/lib/config";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -11,6 +12,14 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  },
+  rewrites: () => {
+    return [
+      {
+        source: "/:path*",
+        destination: `${API_URL}/:path*`,
+      },
+    ];
   },
 };
 
