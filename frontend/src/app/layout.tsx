@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import SideNav from "@/app/ui/sidenav";
+import SideNav from "@/src/components/SideNav";
 import { type Metadata } from "next";
 import "./globals.css";
 
