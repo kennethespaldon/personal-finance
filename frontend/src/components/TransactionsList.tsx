@@ -2,7 +2,7 @@ import type { Transaction } from "@/src/types/transaction";
 import { API_URL } from "@/src/lib/config";
 
 export default async function TransactionsList() {
-  const response = await fetch(`${API_URL}/transactions`, {
+  const response = await fetch(`${API_URL}/api/transactions`, {
     method: "GET",
   });
 
