@@ -33,7 +33,7 @@ npx supabase migration new <name>  # new migration file in supabase/migrations/
 npx supabase gen types typescript --local > src/types/database.types.ts
 ```
 
-Required env vars: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` (in `.env.local` for dev). `PORT` defaults to 8080.
+Required env vars: `SUPABASE_URL`, `SUPABASE_SECRET_KEY` (in `.env.local` for dev). `PORT` defaults to 8080. The secret key is server-only and bypasses RLS, so never expose it to the frontend.
 
 ### Frontend (`cd frontend`)
 
