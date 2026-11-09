@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc --noEmit && node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
-    "dev": "concurrently \"tsc --watch\" \"node --env-file=.env.local --watch src/index.ts\"",
+    "dev": "concurrently \"tsc --noEmit --watch\" \"node --env-file=.env.local --watch src/index.ts\"",
     "start": "node --env-file=.env dist/index.js"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.6",
     "concurrently": "^10.0.6",
+    "esbuild": "^0.28.2",
     "supabase": "^3.0.0",
     "typescript": "^7.0.2"
   },

@@ -11,6 +11,8 @@ Personal budgeting app. Monorepo with two independent npm packages (no root `pac
 
 Deployment uses Vercel services (`vercel.json`): `/api/*` goes to the backend, everything else goes to the frontend.
 
+The backend must stay bundled (`backend/scripts/build.mjs`). Vercel moves `backend/dist/*` to the function root but leaves `package.json` and `node_modules` under `backend/`, so unbundled output fails with "Cannot use import statement outside a module" or "Cannot find package 'express'". Check the layout with `vercel build` and `.vercel/output/services/backend/functions/index.func/.vc-config.json`.
+
 ## Commands
 
 No test suite exists in either package yet.
@@ -20,7 +22,7 @@ No test suite exists in either package yet.
 ```bash
 npm run dev        # tsc --watch (type errors only) + node --watch running src/index.ts directly, loads .env.local
 npm run typecheck  # tsc --noEmit
-npm run build      # tsc -> dist/
+npm run build      # tsc --noEmit, then esbuild bundles src/index.ts -> dist/index.js (single CommonJS file, deps included)
 npm start          # node dist/index.js
 ```
 
