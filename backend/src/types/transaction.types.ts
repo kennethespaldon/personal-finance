@@ -10,3 +10,7 @@ export type TransactionParams = {
   startDate?: string,
   endDate?: string,
 }
+
+export type CreateTransactionBody =
+  Pick<TransactionInsert, "amount_in_cents" | "transaction_date"> &
+  Partial<Pick<TransactionInsert, "description">>;

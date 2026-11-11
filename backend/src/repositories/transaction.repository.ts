@@ -1,5 +1,5 @@
 import supabase from "../config/supabase.ts";
-import { type TransactionParams } from "../types/transaction.types.ts";
+import type { Transaction, TransactionInsert, TransactionParams } from "../types/transaction.types.ts";
 
 const getTransactions = async ({
   minAmount,
@@ -34,4 +34,16 @@ const getTransactions = async ({
   return data;
 };
 
-export default { getTransactions };
+const createTransaction = async (transaction: TransactionInsert): Promise<Transaction> => {
+  const { data, error } = await supabase
+    .from("transactions")
+    .insert(transaction)
+    .select()
+    .single();
+
+  if (error) throw error;
+
+  return data;
+};
+
+export default { getTransactions, createTransaction };
